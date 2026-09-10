@@ -110,4 +110,4 @@ export ANDROID_SDK_ROOT=~/Android/Sdk
 export PATH="~/Android/Sdk/platform-tools:$PATH" 
 ```
 
-**Remember to `source .zshenv`after updating `.zshenv`**
+**Remember to `source .zshenv` after updating `.zshenv`**
