@@ -26,6 +26,12 @@ sudo find / -name "file_here.example"
 flac -V -8 file.type
 ```
 
+#### Add album metadata to flac file(s) (Use * for input if adding to all files in directory)
+
+```bash
+metaflac --set-tag="ALBUM=YourAlbumName" INPUT_FILE.HERE
+```
+
 ### `grep`
 
 ### `grub`
