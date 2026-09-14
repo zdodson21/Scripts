@@ -8,12 +8,22 @@
 
 ### `curl`
 
+### `ffmpeg`
+
 ### `find`
 
 #### Find file starting from root folder
 
 ```bash
 sudo find / -name "file_here.example"
+```
+
+### `flac`
+
+#### Convert file to flac with max compression
+
+```bash
+flac -V -8 file.type
 ```
 
 ### `grep`
