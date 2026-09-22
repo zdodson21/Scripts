@@ -8,6 +8,12 @@
 
 ### `curl`
 
+#### Make request and make it readable, terminal output
+
+```bash
+curl -s https://url.goes/here | jq
+```
+
 ### `ffmpeg`
 
 ### `find`
