@@ -48,6 +48,20 @@ sudo nano /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
+### `ls`
+
+#### List all files (inclusive of dotfiles) in long format, with hints of file types.
+
+```bash
+ls -alF
+```
+
+#### Recursively list subdirectories encountered
+
+```bash
+ls -R
+```
+
 ### `lsof`
 
 #### Listen and display what is using port 3000
