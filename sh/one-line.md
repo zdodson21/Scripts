@@ -2,6 +2,10 @@
 
 ---
 
+## Set alias in `.zshrc` or `.bashrc`
+
+`alias user-alias='grep --color=never "alias " ~/.zshrc'`
+
 ## Linux
 
 ### `cat`
@@ -11,6 +15,7 @@
 #### Make request and make it readable, terminal output
 
 ```bash
+# Check curl-json-output.sh as well!
 curl -s https://url.goes/here | jq
 ```
 
