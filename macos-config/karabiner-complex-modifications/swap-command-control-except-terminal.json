@@ -1,0 +1,61 @@
+{
+    "description": "Swap Command and Control Except in Terminal Apps",
+    "manipulators": [
+        {
+            "conditions": [
+                {
+                    "bundle_identifiers": [
+                        "^com\\.apple\\.Terminal$",
+                        "^com\\.googlecode\\.iterm2$"
+                    ],
+                    "type": "frontmost_application_unless"
+                }
+            ],
+            "from": { "key_code": "left_command" },
+            "to": [{ "key_code": "left_control" }],
+            "type": "basic"
+        },
+        {
+            "conditions": [
+                {
+                    "bundle_identifiers": [
+                        "^com\\.apple\\.Terminal$",
+                        "^com\\.googlecode\\.iterm2$"
+                    ],
+                    "type": "frontmost_application_unless"
+                }
+            ],
+            "from": { "key_code": "left_control" },
+            "to": [{ "key_code": "left_command" }],
+            "type": "basic"
+        },
+        {
+            "conditions": [
+                {
+                    "bundle_identifiers": [
+                        "^com\\.apple\\.Terminal$",
+                        "^com\\.googlecode\\.iterm2$"
+                    ],
+                    "type": "frontmost_application_unless"
+                }
+            ],
+            "from": { "key_code": "right_command" },
+            "to": [{ "key_code": "right_control" }],
+            "type": "basic"
+        },
+        {
+            "conditions": [
+                {
+                    "bundle_identifiers": [
+                        "^com\\.apple\\.Terminal$",
+                        "^com\\.googlecode\\.iterm2$"
+                    ],
+                    "type": "frontmost_application_unless"
+                }
+            ],
+            "from": { "key_code": "right_control" },
+            "to": [{ "key_code": "right_command" }],
+            "type": "basic"
+        }
+    ]
+}
