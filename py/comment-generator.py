@@ -1,3 +1,6 @@
+# alias cgen="python3 ~/Scripts/py/comment-generator.py"
+# alias comment-generator="cgen"
+
 def main():
 	# ! ########################## Init Vars ######################### ! #
 	# Text that appears in the divider
