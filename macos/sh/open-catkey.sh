@@ -6,6 +6,9 @@
 # alias catkey='bash ~/Scripts/macos/sh/open-catkey.sh'
 # alias ckey='catkey'
 
+catalog_url="https://catalog.libraries.psu.edu/catalog/"
+marc_download_dir=~/Downloads
+
 help() {
   echo ""
   echo "open-catkey.sh CATKEY# OPTION"
@@ -37,8 +40,8 @@ end_substring=""
 if [ $2 ]; then
   if [[ $2 == "json" ]]; then
     end_substring="/raw.json"
-  elif [[ $2 == "marc" ]]; then
-    end_substring=".marc"
+  elif [[ $2 == "marc" ]]; then    
+    wget -P $marc_download_dir $catalog_url$key.marc; exit 0;
   elif [[ $2 == "view" ]]; then
     end_substring="/marc_view"
   elif [[ $2 == "help" || $2 == "options" ]]; then
@@ -47,7 +50,7 @@ if [ $2 ]; then
 fi
 
 main() {
-  open https://catalog.libraries.psu.edu/catalog/$key$end_substring
+  open $catalog_url$key$end_substring
 }
 
 main
