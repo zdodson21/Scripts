@@ -1,4 +1,4 @@
-# alias cgen="python3 ~/Scripts/py/comment-generator.py"
+# alias cgen="python3 ~/Scripts/py/comment_generator.py"
 # alias comment-generator="cgen"
 
 def main():

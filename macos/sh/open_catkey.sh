@@ -3,7 +3,7 @@
 # This script is just a quick link opener to navigate to specific items within the Penn State University Library Catalog.
 # Honestly, I just wanted a terminal shortcut for this one :/
 
-# alias catkey='bash ~/Scripts/macos/sh/open-catkey.sh'
+# alias catkey='bash ~/Scripts/macos/sh/open_catkey.sh'
 # alias ckey='catkey'
 
 catalog_url="https://catalog.libraries.psu.edu/catalog/"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# alias cjson="bash ~/Scripts/sh/curl-json-output.sh"
+# alias cjson="bash ~/Scripts/sh/curl_json_output.sh"
 # alias curl-json="cjson"
 
 # Input a URL and get a "prettified JSON output" 
