@@ -21,24 +21,24 @@ with open (alias_path, "r") as file:
 
 aliases = [ # ! MAKE SURE EACH LINE ENDS WITH A COMMA!!!
 	# CD Space Fix
-	f'cd..="cd .."',
+	'cd..="cd .."',
 	
 	# Comment Generator
-	f'cgen="python3 ~/Scripts/py/comment_generator.py"',
+	'cgen="python3 ~/Scripts/py/comment_generator.py"',
 	'comment-generator="cgen"',
 	
 	# Curl JSON Output
-	f'cjson="bash ~/Scripts/sh/curl_json_output.sh"',
+	'cjson="bash ~/Scripts/sh/curl_json_output.sh"',
 	'curl-json="cjson"',
 
 	# Python shorthand
 	'py="python3"',
 
 	# Update aliases
-	f'update-alias="python3 ~/Scripts/py/update_alias.py"',
+	'update-alias="python3 ~/Scripts/py/update_alias.py"',
 
 	# User Aliases
-	f"user-alias='grep --color=never \"alias \" ~/.zshrc'",
+	"user-alias='grep --color=never \"alias \" ~/.zshrc'",
 ]
 
 def line_exists(alias: str):
