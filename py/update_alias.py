@@ -21,20 +21,21 @@ with open (alias_path, "r") as file:
 
 aliases = [ # ! MAKE SURE EACH LINE ENDS WITH A COMMA!!!
 	# Comment Generator
-	f'alias cgen="python3 {script_path}/py/comment_generator.py"',
+	f'alias cgen="python3 ~/Scripts/py/comment_generator.py"',
 	'alias comment-generator="cgen"',
 	
 	# Curl JSON Output
-	f'alias cjson="bash {script_path}/sh/curl_json_output.sh"',
+	f'alias cjson="bash ~/Scripts/sh/curl_json_output.sh"',
 	'alias curl-json="cjson"',
 
 	# Python shorthand
 	'alias py="python3"',
 
 	# Update aliases
-	f'alias update-alias="python3 {script_path}/py/update_alias.py"',
+	f'alias update-alias="python3 ~/Scripts/py/update_alias.py"',
 
 	# TODO add user-alias alias to this list
+	f"alias user-alias='grep --color=never \"alias \" ~/.zshrc'"
 ]
 
 def line_exists(alias: str):
