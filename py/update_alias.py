@@ -35,7 +35,7 @@ aliases = [ # ! MAKE SURE EACH LINE ENDS WITH A COMMA!!!
 	f'alias update-alias="python3 ~/Scripts/py/update_alias.py"',
 
 	# TODO add user-alias alias to this list
-	f"alias user-alias='grep --color=never \"alias \" ~/.zshrc'"
+	f"alias user-alias='grep --color=never \"alias \" ~/.zshrc'",
 ]
 
 def line_exists(alias: str):
