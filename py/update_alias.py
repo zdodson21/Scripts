@@ -34,7 +34,7 @@ aliases = [ # ! MAKE SURE EACH LINE ENDS WITH A COMMA!!!
 	# Update aliases
 	f'alias update-alias="python3 ~/Scripts/py/update_alias.py"',
 
-	# TODO add user-alias alias to this list
+	# User Aliases
 	f"alias user-alias='grep --color=never \"alias \" ~/.zshrc'",
 ]
 
