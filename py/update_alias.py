@@ -20,22 +20,25 @@ with open (alias_path, "r") as file:
 		content.append(line.strip())
 
 aliases = [ # ! MAKE SURE EACH LINE ENDS WITH A COMMA!!!
+	# CD Space Fix
+	f'cd..="cd .."',
+	
 	# Comment Generator
-	f'alias cgen="python3 ~/Scripts/py/comment_generator.py"',
-	'alias comment-generator="cgen"',
+	f'cgen="python3 ~/Scripts/py/comment_generator.py"',
+	'comment-generator="cgen"',
 	
 	# Curl JSON Output
-	f'alias cjson="bash ~/Scripts/sh/curl_json_output.sh"',
-	'alias curl-json="cjson"',
+	f'cjson="bash ~/Scripts/sh/curl_json_output.sh"',
+	'curl-json="cjson"',
 
 	# Python shorthand
-	'alias py="python3"',
+	'py="python3"',
 
 	# Update aliases
-	f'alias update-alias="python3 ~/Scripts/py/update_alias.py"',
+	f'update-alias="python3 ~/Scripts/py/update_alias.py"',
 
 	# User Aliases
-	f"alias user-alias='grep --color=never \"alias \" ~/.zshrc'",
+	f"user-alias='grep --color=never \"alias \" ~/.zshrc'",
 ]
 
 def line_exists(alias: str):
@@ -48,9 +51,9 @@ def line_exists(alias: str):
 def main():
 	print(f"Checking {alias_file}")
 	for alias in aliases:
-		if (not line_exists(alias)):
+		if (not line_exists(f'alias {alias}')):
 			with open(alias_path, "a") as file:
-				file.write(f"{alias}\n")
+				file.write(f"alias {alias}\n")
 				print(f"{Colors.ADDED}Wrote: {alias} to {alias_file}{Colors.REVERT}")
 		else:
 			print(f"{Colors.IGNORED}{alias} already exists in {alias_file}{Colors.REVERT}")
