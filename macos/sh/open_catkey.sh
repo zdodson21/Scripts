@@ -28,7 +28,7 @@ help() {
 }
 
 if [ -z $1 ]; then
-  echo "Missing key!"; exit 1;
+  echo "Missing key!"; help; exit 1;
 elif [[ $1 == "help" || $1 == "options" ]]; then
   help
 else
