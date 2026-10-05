@@ -7,7 +7,6 @@
 # alias ckey='catkey'
 
 catalog_url="https://catalog.libraries.psu.edu/catalog/"
-marc_download_dir=~/Downloads
 
 help() {
   echo ""
@@ -16,7 +15,8 @@ help() {
   echo "Options:"
   echo "  <leave blank> - go to library catalog website."
   echo "  json - navigate to raw.json page."
-  echo "  marc - download marc file."
+  echo "  djson - download the json to the user's current directory."
+  echo "  marc - download marc file to the user's current directory."
   echo "  view - open marc view on library catalog website."
   echo "  help - view this text."
   echo "  options - view this text."
@@ -37,17 +37,32 @@ fi
 
 end_substring=""
 
-if [ $2 ]; then
-  if [[ $2 == "json" ]]; then
+case $2 in
+  # Open the json view in the user's browser
+  "json")
     end_substring="/raw.json"
-  elif [[ $2 == "marc" ]]; then    
-    wget -P $marc_download_dir $catalog_url$key.marc; exit 0;
-  elif [[ $2 == "view" ]]; then
+    ;;
+
+  # Download the JSON file to the user's current directory
+  "djson")
+    wget $catalog_url$key/raw.json; exit 0;
+    ;;
+
+  # Download the marc file to the user's current directory
+  "marc")
+    wget $catalog_url$key.marc; exit 0;
+    ;;
+
+  # Open the MARC viewer in the user's browser
+  "view")
     end_substring="/marc_view"
-  elif [[ $2 == "help" || $2 == "options" ]]; then
+    ;;
+  
+  # Show the help menu
+  "help"|"options")
     help
-  fi
-fi
+    ;;
+esac
 
 main() {
   open $catalog_url$key$end_substring
