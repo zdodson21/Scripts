@@ -1,10 +1,8 @@
 #!/bin/bash
 
-# This script is just a quick link opener to navigate to specific items within the Penn State University Library Catalog.
-# Honestly, I just wanted a terminal shortcut for this one :/
+# Sample alias
 
-# alias catkey='bash ~/Scripts/macos/sh/open_catkey.sh'
-# alias ckey='catkey'
+# alias catkey='bash ~/Scripts/open_catkey.sh'
 
 catalog_url="https://catalog.libraries.psu.edu/catalog/"
 
@@ -50,7 +48,7 @@ case $2 in
 
   # Download the marc file to the user's current directory
   "marc")
-    wget $catalog_url$key.marc; exit 0;
+    wget -O $key.mrc $catalog_url$key.marc; exit 0;
     ;;
 
   # Open the MARC viewer in the user's browser
@@ -65,7 +63,14 @@ case $2 in
 esac
 
 main() {
-  open $catalog_url$key$end_substring
+  system=$(uname)
+  final_url=$catalog_url$key$end_substring
+  
+  if [[ $system == "Darwin" ]]; then
+    open $final_url
+  elif [[ $system == "Linux" ]]; then
+    xdg-open $final_url
+  fi
 }
 
 main
